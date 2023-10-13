@@ -7,6 +7,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Post Routes - simplified for now
 router.get("/:id", ensureAuth, postsController.getPost);
 
+//upload middleware that requires us to use multer
 router.post("/createPost", upload.single("file"), postsController.createPost);
 
 router.put("/likePost/:id", postsController.likePost);
